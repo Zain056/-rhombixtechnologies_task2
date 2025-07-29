@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Futurify</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Loader Screen -->
+  <div id="loader" class="loader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <h1>🎧 Futurify</h1>
+    <div>
+      <input type="text" placeholder="Search music..." id="searchInput" />
+      <a href="login.html" class="btn">Login</a>
+      <a href="signup.html" class="btn">Sign Up</a>
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>Your Library</h2>
+    <button onclick="createPlaylist()">+ Create Playlist</button>
+    <div id="playlists"></div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+    <section>
+      <h2>Trending Songs</h2>
+      <div class="song-grid" id="trendingSongs"></div>
+    </section>
+    <section>
+      <h2>Popular Artists</h2>
+      <div class="artist-list">
+        <div class="artist-card">🎤 Artist One</div>
+        <div class="artist-card">🎸 Artist Two</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Player -->
+  <footer class="player">
+    <button onclick="prevSong()">⏮️</button>
+    <button onclick="togglePlay()">⏯️</button>
+    <button onclick="nextSong()">⏭️</button>
+    <div id="nowPlaying">Select a song</div>
+    <input type="range" id="seekBar" value="0" />
+    <input type="range" id="volumeBar" min="0" max="1" step="0.01" value="0.7" />
+  </footer>
+
+  <script src="script.js"></script>
+  <div id="playlistDialog" class="dialog hidden">
+    <div class="dialog-box">
+      <h3>Select Playlist</h3>
+      <ul id="playlistOptions"></ul>
+      <input type="text" id="newPlaylistName" placeholder="Or create new..." />
+      <button onclick="saveToPlaylist()">✅ Add</button>
+      <button onclick="closeDialog()">❌ Cancel</button>
+    </div>
+  </div>
+</body>
+
+</html>
